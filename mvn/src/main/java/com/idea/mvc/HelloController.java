@@ -6,9 +6,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 
-
-
-
+/**
+ * test!
+ *
+ */
 @Controller
 @RequestMapping("/")
 public class HelloController {
@@ -19,4 +20,10 @@ public class HelloController {
 
 		return "hello";
 	}
+
+    @RequestMapping("/hello")
+    public String hello(ModelMap model,String name ,String age){
+        model.addAttribute("message","hello the name is "+name + "; the age is "+age);
+        return "hello";
+    }
 }
